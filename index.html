@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLACKJACK Rhapsody · App Store 介紹預覽</title>
+<style>
+  :root{
+    --bg:#06120a; --bgAlt:#0a1810; --surface:#0e1f15; --surfaceHi:#142a1d;
+    --ink:#f5f1da; --inkSub:rgba(245,241,218,0.62); --inkMute:rgba(245,241,218,0.38);
+    --gold:#e8c547; --goldDim:#b89832; --green:#4ade80; --red:#ef4554;
+    --border:rgba(232,197,71,0.18); --borderSubtle:rgba(245,241,218,0.07);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"SF Pro Text","Helvetica Neue",system-ui,"PingFang TC","Microsoft JhengHei",sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(ellipse at 50% -10%, rgba(15,40,25,0.7) 0%, rgba(6,18,10,0) 55%);
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:40px 20px 80px;}
+  .mono{font-family:ui-monospace,"SF Mono",monospace;}
+
+  /* Hero */
+  .hero{display:flex;gap:22px;align-items:center;border-bottom:1px solid var(--border);padding-bottom:28px;margin-bottom:14px;}
+  .hero img.icon{width:104px;height:104px;border-radius:23px;border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+  .hero h1{font-size:30px;font-weight:800;margin:0 0 2px;letter-spacing:-0.4px;}
+  .hero .dev{color:var(--inkSub);font-size:14px;margin-bottom:8px;}
+  .hero .sub{color:var(--gold);font-size:16px;font-weight:600;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+  .chip{font-size:11px;font-weight:600;letter-spacing:.4px;padding:5px 10px;border-radius:7px;background:rgba(232,197,71,0.12);color:var(--gold);font-family:ui-monospace,"SF Mono",monospace;text-transform:uppercase;}
+
+  h2.section{font-size:13px;font-weight:700;letter-spacing:1.6px;color:var(--inkSub);text-transform:uppercase;font-family:ui-monospace,"SF Mono",monospace;margin:44px 0 16px;}
+
+  /* Screenshot gallery */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:30px 20px;padding:4px 2px 18px;}
+  .shot{width:100%;}
+  .cap{margin-bottom:10px;min-height:64px;}
+  .cap .big{font-size:18px;font-weight:800;line-height:1.25;letter-spacing:-0.2px;}
+  .cap .small{font-size:12.5px;color:var(--inkSub);margin-top:4px;line-height:1.4;}
+  .cap .num{display:inline-block;font-size:11px;font-weight:700;color:var(--bg);background:var(--gold);border-radius:5px;padding:1px 7px;margin-bottom:6px;font-family:ui-monospace,monospace;}
+  .frame{position:relative;border-radius:30px;overflow:hidden;border:1px solid var(--border);background:#000;box-shadow:0 16px 40px rgba(0,0,0,0.5);aspect-ratio:1284/2778;}
+  .frame img{width:100%;height:100%;display:block;object-fit:cover;}
+  .ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:repeating-linear-gradient(135deg,#0e2418 0 12px,#0b1d13 12px 24px);color:var(--inkMute);}
+  .ph .pt{font-size:13px;font-weight:700;color:var(--inkSub);margin-bottom:8px;}
+  .ph .pf{font-size:11px;font-family:ui-monospace,monospace;color:var(--gold);}
+  .ph .pn{font-size:11px;margin-top:10px;color:var(--inkMute);}
+
+  /* Description */
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;}
+  .desc{white-space:pre-wrap;font-size:15px;}
+  .desc .h{color:var(--gold);font-weight:700;display:block;margin:18px 0 6px;}
+  .desc .lead{font-size:16px;}
+  .note{color:var(--inkSub);font-size:14px;}
+  .kv{width:100%;border-collapse:collapse;font-size:14px;}
+  .kv td{padding:9px 4px;border-bottom:1px solid var(--borderSubtle);vertical-align:top;}
+  .kv td.k{color:var(--inkSub);width:140px;white-space:nowrap;}
+  .kw{font-family:ui-monospace,"SF Mono",monospace;font-size:13px;color:var(--gold);background:rgba(232,197,71,0.08);padding:10px 12px;border-radius:8px;word-break:break-all;}
+  footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--border);color:var(--inkMute);font-size:12.5px;}
+  .hint{color:var(--inkMute);font-size:12.5px;margin:8px 0 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img class="icon" src="app-icon.png" alt="icon"
+         onerror="this.style.display='none'">
+    <div>
+      <h1>BLACKJACK Rhapsody</h1>
+      <div class="dev">Revibe co.,LTD · 主畫面顯示「BJ Rhapsody」</div>
+      <div class="sub">算牌訓練 × 策略模擬 × 長期驗證</div>
+      <div class="chips">
+        <span class="chip">17+</span>
+        <span class="chip">教育 / 工具</span>
+        <span class="chip">7 種模式</span>
+        <span class="chip">30 語言</span>
+        <span class="chip">200 萬手模擬</span>
+        <span class="chip">無內購追蹤</span>
+      </div>
+    </div>
+  </div>
+  <p class="hint">App Store 截圖區（全部 10 張自動排列，上下捲動即可看完）。有檔的直接顯示；缺的留位置，把對應檔名放進本資料夾即自動顯示。</p>
+
+  <!-- SCREENSHOTS -->
+  <h2 class="section">預覽截圖 · Screenshots</h2>
+  <div class="gallery">
+
+    <div class="shot">
+      <div class="cap"><span class="num">1</span><div class="big">每一手，都有最佳解</div><div class="small">即時顯示 RC 與策略建議，邊玩邊建立直覺</div></div>
+      <div class="frame"><img src="01-normal-play.png" alt="正常模式發牌"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;正常模式發牌&lt;/div&gt;&lt;div class=pf&gt;01-normal-play.png&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+    <div class="shot">
+      <div class="cap"><span class="num">2</span><div class="big">闖五關，傳說中的勝利策略</div><div class="small">親自體驗連勝，還能模擬三天三夜的結果</div></div>
+      <div class="frame"><img src="parlay.png" alt="闖關模式"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;闖關模式&lt;/div&gt;&lt;div class=pf&gt;parlay.png&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+    <div class="shot">
+      <div class="cap"><span class="num">3</span><div class="big">輸了就加倍，結果會怎樣？</div><div class="small">親自體驗馬丁格爾倍投策略的風險與結果</div></div>
+      <div class="frame"><img src="martingale.png" alt="馬丁格爾模式"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;馬丁格爾模式&lt;/div&gt;&lt;div class=pf&gt;martingale.png&lt;/div&gt;&lt;div class=pn&gt;放入此檔即顯示&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+    <div class="shot">
+      <div class="cap"><span class="num">4</span><div class="big">基本策略內建，更能自訂測試</div><div class="small">除標準策略外，可自編專屬策略，再用模擬驗證成效</div></div>
+      <div class="frame"><img src="strategy-chart.png" alt="策略總表"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;策略總表設置&lt;/div&gt;&lt;div class=pf&gt;strategy-chart.png&lt;/div&gt;&lt;div class=pn&gt;放入此檔即顯示&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+    <div class="shot">
+      <div class="cap"><span class="num">5</span><div class="big">賭場規則，自由設定</div><div class="small">遊玩與模擬都套用你設定的賭場環境</div></div>
+      <div class="frame"><img src="casino-settings.png" alt="賭場環境設定"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;賭場環境設定&lt;/div&gt;&lt;div class=pf&gt;casino-settings.png&lt;/div&gt;&lt;div class=pn&gt;放入此檔即顯示&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+    <div class="shot">
+      <div class="cap"><span class="num">6</span><div class="big">200 萬手，驗證長期優勢</div><div class="small">淨利、ROI、每手期望與損益曲線一次到位</div></div>
+      <div class="frame"><img src="simulation-result.png" alt="模擬 +$428,550"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;模擬 +$428,550 結果&lt;/div&gt;&lt;div class=pf&gt;simulation-result.png&lt;/div&gt;&lt;div class=pn&gt;放入此檔即顯示&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+    <div class="shot">
+      <div class="cap"><span class="num">7</span><div class="big">EV% 熱圖，看懂每手期望值</div><div class="small">硬牌／軟牌／對子，最佳解一眼分辨</div></div>
+      <div class="frame"><img src="ev-heatmap.png" alt="EV% 熱圖"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;EV% 熱圖矩陣&lt;/div&gt;&lt;div class=pf&gt;ev-heatmap.png&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+    <div class="shot">
+      <div class="cap"><span class="num">8</span><div class="big">出發前，先模擬 200 場</div><div class="small">獲利機率、破產風險、結果分布看得見</div></div>
+      <div class="frame"><img src="trip-sim.png" alt="場次模擬"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;場次模擬&lt;/div&gt;&lt;div class=pf&gt;trip-sim.png&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+    <div class="shot">
+      <div class="cap"><span class="num">9</span><div class="big">Hi-Lo 算牌，練到大師級</div><div class="small">多玩家＋累積 RC，5 級難度循序鍛鍊</div></div>
+      <div class="frame"><img src="practice.png" alt="算牌練習"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;算牌練習 LV5&lt;/div&gt;&lt;div class=pf&gt;practice.png&lt;/div&gt;&lt;div class=pn&gt;放入此檔即顯示&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+    <div class="shot">
+      <div class="cap"><span class="num">10</span><div class="big">30 種語言，玩家無國界</div><div class="small">涵蓋英、日、韓、西、法、德、葡等主要語系</div></div>
+      <div class="frame"><img src="languages.png" alt="多國語言"
+        onerror="this.parentNode.innerHTML='&lt;div class=ph&gt;&lt;div class=pt&gt;多國語言選擇&lt;/div&gt;&lt;div class=pf&gt;languages.png&lt;/div&gt;&lt;div class=pn&gt;放入此檔即顯示&lt;/div&gt;&lt;/div&gt;'"></div>
+    </div>
+
+  </div>
+
+  <!-- DESCRIPTION -->
+  <h2 class="section">App 描述 · Description</h2>
+  <div class="card">
+    <div class="desc"><span class="lead">你真的了解 21 點嗎？</span>
+
+每個玩家心裡都有些疑問：
+「這把該補牌還是停牌？」
+「連贏五把該加注嗎？」
+「算牌到底有沒有用？」
+
+BLACKJACK Rhapsody 是一套為認真玩家設計的 21 點策略研究工具，讓你不靠運氣、用數據找到答案。
+<span class="h">── 7 種模式，全方位訓練 ──</span>【正常模式】
+標準 21 點遊玩。每手即時顯示 Running Count 與最佳策略建議，邊玩邊學，快速建立直覺。
+
+【闖關模式】
+Parlay 連勝策略實戰。設定目標關數，視覺化追蹤每一關的進度與損益，感受連勝累積的張力。
+
+【馬丁格爾模式】
+馬丁格爾倍投策略追蹤。自動計算每次下注金額，記錄連敗極值與歷史高點，清楚看見策略的風險邊界。
+
+【策略設置】
+完整編輯你的 Hard / Soft / Pairs / Insurance 策略矩陣。設定 12 個 RC 區間的自訂投注金額，打造屬於你的算牌投注系統。
+
+【模擬分析】
+一鍵執行最高 200 萬手模擬。驗證長期勝率、EV%（期望值）、損益曲線，以及各 RC 區間的表現差異。4 種投注模式均可模擬：固定下注 / 自訂 RC 投注 / 闖關 / 馬丁格爾。
+
+【場次模擬】
+以「到場次數」為單位的資金曲線模擬。觀察多次賭場到場的損益分布、破產風險與最大回撤，評估長期策略的穩定性。
+
+【算牌練習】
+Hi-Lo 系統訓練，LV1 至 LV5 難度遞增：
+• LV1：閃卡單張計數
+• LV2：玩家單手計數
+• LV3：玩家＋莊家（全明牌）
+• LV4：玩家＋莊家累計 RC 追蹤
+• LV5：多玩家＋莊家累計 RC 追蹤
+<span class="h">── 完整賭場環境設定 ──</span>12 項賭場規則完整可調：
+
+• 牌組數（1 / 2 / 4 / 6 / 8 副）
+• 洗牌滲透率
+• 莊家行為（S17 / H17）
+• BJ 賠率（3:2 / 6:5 / 1:1）
+• 投降規則（Late Surrender / 不允許）
+• 保險規則（含 Even Money）
+• 加倍限制（任意 / 9-11 / 10-11）
+• 分牌後加倍（DAS / NDAS）
+• 分牌上限（2 / 3 / 4 手）
+• 分 AA 後補牌規則
+• 分 AA 後可再分
+• 分牌後 21 點賠率（1:1 / 依 BJ 賠率）
+<span class="h">── 其他特色 ──</span>• EV% 熱圖矩陣：視覺化呈現各手牌組合的期望值差異
+• RC 分布表：各計數區間的勝率、平均下注、損益一覽
+• 30 種語言支援
+• 14 套色彩主題（深色 8 套、淺色 6 套）
+• 數據持久化：關閉後重開，所有設定與統計完整保留
+<span class="h">── 適合誰使用？──</span>✓ 想了解 21 點基本策略的初學者
+✓ 正在練習 Hi-Lo 算牌的進階玩家
+✓ 想驗證長期投注策略效果的研究型玩家
+✓ 出發賭場前想熟悉規則的旅遊玩家
+
+本 App 為策略研究與練習工具，<b>不涉及真實金錢交易</b>。
+
+BLACKJACK Rhapsody — 用數據，讀懂 21 點。</div>
+  </div>
+
+  <!-- META -->
+  <h2 class="section">其他欄位 · Metadata</h2>
+  <div class="card">
+    <table class="kv">
+      <tr><td class="k">宣傳文字</td><td>全新 v1.2.0 上線。30 種語言、14 套主題、7 種模式。分牌規則、BJ 賠率、DAS 等 12 項賭場環境完整可調。模擬引擎最高支援 200 萬手，長期 EV% 一目了然。</td></tr>
+      <tr><td class="k">關鍵字</td><td><span class="kw">blackjack,21點,算牌,card counting,Hi-Lo,策略,模擬,賭場,撲克,21,基本策略,計牌</span></td></tr>
+      <tr><td class="k">分類 / 分級</td><td>教育 · 工具　/　17+（模擬博弈內容）</td></tr>
+      <tr><td class="k">隱私政策</td><td>https://bioxcintw.com/blackjack-rhapsody/privacy.html</td></tr>
+      <tr><td class="k">支援頁面</td><td>https://bioxcintw.com/blackjack-rhapsody/support.html</td></tr>
+      <tr><td class="k">提供者</td><td>銳馥薇有限公司 Revibe co.,LTD</td></tr>
+    </table>
+  </div>
+
+  <footer>
+    BLACKJACK Rhapsody · App Store 繁體中文介紹預覽（非正式商店頁，僅供內部對照）<br>
+    © 2026 Revibe co.,LTD. 本 App 為策略研究與訓練工具，不提供真實金錢博弈。
+  </footer>
+
+</div>
+</body>
+</html>
