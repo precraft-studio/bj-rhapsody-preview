@@ -60,6 +60,16 @@
   .hint{color:var(--inkMute);font-size:12.5px;margin:8px 0 0;}
   .price{display:inline-flex;align-items:baseline;gap:10px;margin:12px 0 2px;font-size:28px;font-weight:800;color:var(--gold);letter-spacing:-0.5px;}
   .price .pn2{font-size:12px;font-weight:600;color:var(--inkSub);letter-spacing:0;}
+  /* App Store 下載按鈕 */
+  .dl-btn{display:inline-flex;align-items:center;gap:11px;margin-top:16px;padding:12px 24px;border-radius:13px;text-decoration:none;background:linear-gradient(180deg,#f2d869,#e8c547);color:#1a1400;box-shadow:0 8px 24px rgba(232,197,71,0.28);border:1px solid rgba(255,255,255,0.25);transition:transform .15s,box-shadow .15s;}
+  .dl-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(232,197,71,0.42);}
+  .dl-btn svg{width:26px;height:26px;flex-shrink:0;}
+  .dl-btn .t1{font-size:11px;font-weight:600;opacity:.75;display:block;line-height:1.1;letter-spacing:.3px;}
+  .dl-btn .t2{font-size:18px;font-weight:800;display:block;line-height:1.15;}
+  .cta-final{text-align:center;margin:56px 0 8px;padding:40px 22px;border:1px solid var(--border);border-radius:16px;background:var(--surface);background-image:radial-gradient(ellipse at 50% 0%,rgba(232,197,71,0.10) 0%,rgba(14,31,21,0) 60%);}
+  .cta-final h3{font-size:23px;margin:0 0 6px;color:var(--ink);font-weight:800;}
+  .cta-final p{color:var(--inkSub);font-size:14px;margin:0 0 20px;}
+  @media (max-width:560px){ .dl-btn{width:100%;justify-content:center;} }
 </style>
 </head>
 <body>
@@ -82,6 +92,10 @@
         <span class="chip">200 萬手模擬</span>
         <span class="chip">無內購追蹤</span>
       </div>
+      <a class="dl-btn" href="https://apps.apple.com/app/id6779332916" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span><span class="t1">下載於 App Store</span><span class="t2">立即下載 · US$29.99</span></span>
+      </a>
     </div>
   </div>
 
@@ -229,8 +243,18 @@ BLACKJACK Rhapsody — 用數據，讀懂 21 點。</div>
     </table>
   </div>
 
+  <!-- FINAL CTA -->
+  <div class="cta-final">
+    <h3>準備好用數據讀懂 21 點了嗎？</h3>
+    <p>US$29.99 一次買斷 · 無內購 · 無廣告 · 30 種語言</p>
+    <a class="dl-btn" href="https://apps.apple.com/app/id6779332916" target="_blank" rel="noopener">
+      <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      <span><span class="t1">下載於 App Store</span><span class="t2">立即下載 BLACKJACK Rhapsody</span></span>
+    </a>
+  </div>
+
   <footer>
-    BLACKJACK Rhapsody · App Store 繁體中文介紹預覽（非正式商店頁，僅供內部對照）<br>
+    立即在 App Store 下載：<a href="https://apps.apple.com/app/id6779332916" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">apps.apple.com/app/id6779332916</a><br>
     © 2026 Revibe LTD. 本 App 為策略研究與訓練工具，不提供真實金錢博弈。
   </footer>
 
